@@ -1,0 +1,26 @@
+body {
+    font-family: "Roboto"; 
+    background-image: url("eecu.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(0, 102, 211);
+    text-shadow: 5px;
+}
+
+h2 {
+    text-align: center;
+    color: #ffffff;
+}
+
+#firstInput {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid rgb(188, 188, 188);
+    width: 750px;
+    border-radius: 16px;
+}
