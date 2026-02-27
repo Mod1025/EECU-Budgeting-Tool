@@ -1,6 +1,6 @@
 body {
     font-family: "Roboto"; 
-    background-image: url("eecu.jpg");
+    background-image: url("eecu.svg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -8,19 +8,45 @@ body {
 h1 {
     text-align: center;
     color: rgb(0, 102, 211);
-    text-shadow: 5px;
+    text-shadow: 0px 2px rgb(125, 124, 124);
 }
 
 h2 {
     text-align: center;
     color: #ffffff;
+    text-shadow: 0px 2px rgb(125, 124, 124);
+}
+
+#CalculateButton {
+  display: flex;
+  justify-content: center; 
+margin: 0 auto;
+margin-top: 20px;
+background-color: #3BAE53;
+border-radius: 5px;
+border: none;
+color: white;
+padding: 10px;
+box-shadow: 0px 2px rgb(125, 124, 124);
+}
+
+#CalculateButton:hover {
+background-color: #329046;
 }
 
 #firstInput {
-    display:flex;
-    align-items: center;
+    display: flex;
     flex-direction: column;
-    border: 1px solid rgb(188, 188, 188);
-    width: 750px;
-    border-radius: 16px;
+    margin: 0 auto;
+    justify-content: center;
+    width: 40%;
+    gap: 5px; 
+    border: none;
+}
+
+input, select {
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 2px rgb(175, 174, 174);
 }
