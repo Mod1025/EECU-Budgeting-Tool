@@ -1,8 +1,9 @@
 body {
     font-family: "Roboto"; 
-    background-image: url("eecu.svg");
+    background-image: url("../Image/eecu.svg");
     background-repeat: no-repeat;
     background-size: cover;
+    height: 950px;
 }
 
 h1 {
