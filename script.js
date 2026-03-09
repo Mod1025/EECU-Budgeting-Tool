@@ -1,26 +1,16 @@
-const overlay = document.getElementById("overlay");
-const careerTitle = document.getElementById("occupation");
-//copying rey's code for a bit
-function createButtons(careers) {
-    careers.forEach((career, index) => {
-     const button = document.createElement("button");
-     button.innerHTML = `${career.Occupation}: ${career.Salary}`;
-     button.setAttribute("id", `${index}`);
-        button.addEventListener("click", () => {
-            careerTitle.innerHTML = `Future Career: ${career.Occupation}`;
-            console.log(`Selected Career: ${career.Occupation}, Salary: ${career.Salary}`);
-        });
-        overlay.appendChild(button);
-    });
-}
+let Career = { Occupation: "", Salary: 0 };
+const dropDown = document.getElementById("careerDrop");
+const taxCard = document.getElementsByClassName("card"); 
+
+
 
 async function getCareers() {
     const url = "https://eecu-data-server.vercel.app/data";
     try {
         const response = await fetch(url);
-        const jobs = await response.json();
-        createButtons(jobs); //see above
-        return jobs;
+        const careers = await response.json();
+        createOptions(careers); //see above
+        return careers;
     }
     catch (error) {
         console.error("Error fetching careers data:", error);
@@ -28,4 +18,44 @@ async function getCareers() {
     }
     
 }
-getCareers();
+
+function createOptions(careers) {
+    careers.forEach(career => {
+        const option = document.createElement("option");
+        const occupation = career.Occupation;
+        const salary = career.Salary;
+        option.dataset.salary = salary; // Store the salary in a data attribute for later retrieval
+        option.dataset.occupation = occupation; // Store the occupation in a custom property for later retrieval
+        option.innerHTML = (`${occupation}: $${salary}`);
+        dropDown.appendChild(option);
+    });
+}
+
+function saveCareer() {
+    localStorage.setItem("career", JSON.stringify(Career));
+}
+
+function loadCareer() {
+    const savedCareer = localStorage.getItem("career");
+    if (savedCareer) {
+        Career = JSON.parse(savedCareer);
+        console.log(`Future Career: ${Career.Occupation}`);
+    }
+}
+
+function initalize() {
+    loadCareer(); // Load the saved career from localStorage
+    getCareers(); // Fetch careers and populate the dropdown
+    dropDown.addEventListener("change", () => {
+        let occupation = dropDown.dataset.occupation;
+        let salary = Number(dropDown.dataset.salary);
+        dropDown.dataset.salary = salary; // Update the salary in the data attribute
+        dropDown.dataset.occupation = occupation; // Update the occupation in the data attribute
+        console.log(`Selected Career: ${occupation}, Salary: $${salary}`); 
+    }); //for when the user selects a dropdown option, it will update the Career object with the selected occupation and salary, and log the selected career and salary to the console.
+}
+
+
+
+
+initalize();
