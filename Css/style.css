@@ -10,53 +10,84 @@ h1 {
     text-align: center;
     color: rgb(0, 102, 211);
     text-shadow: 0px 5px 5px rgb(85, 85, 85);
+    font-size: 72px;
 }
 
 h2 {
     text-align: center;
     color: #ffffff;
     text-shadow: 0px 5px 5px rgb(85, 85, 85);
+    font-size: 32px;
 }
 
-#CalculateButton {
-  display: flex;
-  justify-content: center; 
-margin: 0 auto;
-margin-top: 20px;
-background-color: #3BAE53;
-border-radius: 5px;
-border: none;
-color: white;
-padding: 10px;
-box-shadow: 0px 2px rgb(125, 124, 124);
 
+#firstInput {
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto; 
+    align-items: center; 
+    width: 45%; 
+    gap: 20px; 
+    border-radius: 20px;
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
 }
 
-#CalculateButton:hover {
-background-color: #329046;
+
+#firstInput input, 
+#firstInput select {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0; 
+    border-radius: 12px; 
+    font-size: 1rem;
+    color: #a0a0a0; 
+    box-sizing: border-box; 
 }
 
 #firstInput {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    justify-content: center;
-    width: 40%;
-    gap: 50px; 
-    border: 5px;
-    border-radius: 16px;
+    margin: 50px auto; 
+    align-items: center; 
+    width: 45%; 
+  
+    gap: 25px; 
+    border-radius: 20px;
     background-color: #ffffff;
-    padding: 20px;
-    height: 30vh;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+   
 }
 
-input, select {
-    padding: 5px;
-    border-radius: 5px;
-    height:10%;
+#firstInput input, 
+#firstInput select {
+    width: 100%;
+    padding: 18px 20px; 
+    border: 2px solid #e0e0e0; 
+    border-radius: 12px; 
+    font-size: 1.1rem;
+    box-sizing: border-box; 
+    
 }
 
-select {
-    padding: 20px;
-    border: 2px solid black;
+#CalculateButton {
+    display: flex;
+  justify-content: center; 
+margin: 0 auto;
+margin-top: 20px;
+background-color: #3BAE53;
+border-radius: 16px;
+border: none;
+color: white;
+padding: 10px;
+box-shadow: 0px 2px rgb(125, 124, 124);  
+}
+
+#CalculateButton a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 15px;
 }
