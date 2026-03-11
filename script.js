@@ -1,6 +1,6 @@
 let Career = { Occupation: "", Salary: 0 };
 const dropDown = document.getElementById("careerDrop");
-const taxCard = document.getElementsByClassName("card"); 
+const taxCard = document.getElementsByClassName("card");
 
 
 
@@ -16,7 +16,7 @@ async function getCareers() {
         console.error("Error fetching careers data:", error);
         return [];
     }
-    
+
 }
 
 function createOptions(careers) {
@@ -51,7 +51,7 @@ function initalize() {
         let salary = Number(dropDown.dataset.salary);
         dropDown.dataset.salary = salary; // Update the salary in the data attribute
         dropDown.dataset.occupation = occupation; // Update the occupation in the data attribute
-        console.log(`Selected Career: ${occupation}, Salary: $${salary}`); 
+        console.log(`Selected Career: ${occupation}, Salary: $${salary}`);
     }); //for when the user selects a dropdown option, it will update the Career object with the selected occupation and salary, and log the selected career and salary to the console.
 }
 
