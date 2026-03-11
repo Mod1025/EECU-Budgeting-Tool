@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Css/Budgeting.css">
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <figure><img src="../Image/logo.png"></figure>
-        <nav> 
+        <nav>
             <a href="dashboard.html">Dashboard</a>
             <a href="Budgeting.html">Budgeting</a>
             <a href="index.html"> Account</a>
@@ -25,13 +27,13 @@
     <main>
         <div class="cards">
             <section class="card">
-        <section id="income">
-            <h2>Career & Income</h2>
-            <select placeholder="Your career here" id="careerDrop">
-                <option value="" disabled selected>Your career here</option>
-            </select>
-            <h1>$1,000.00</h1>
-        </section>
+                <section id="income">
+                    <h2>Career & Income</h2>
+                    <select placeholder="Your career here" id="careerDrop">
+                        <option value="" disabled selected>Your career here</option>
+                    </select> <!--Below this is where the salary will show, update tags-->
+                    <h1>Your current salary is: $<span id="salary-placeholder"></span></h1>
+                </section>
             </section>
             <section class="card">
                 <h2>Tax Deductions</h2>
@@ -46,7 +48,8 @@
             </section>
         </div>
     </main>
-    <h2 id="wise">💡 Wise-Up: You're saving less than 10% of your income. Try adjusting your lifestyle budget to pay your future self first!</h2>
+    <h2 id="wise">💡 Wise-Up: If you're saving less than 10% of your income,
+        try adjusting your lifestyle budget to pay your future self first!</h2>
     <footer>
         <figure>
             <img src="../Image/EECU Logo White.svg" alt="EECU-White">
@@ -60,11 +63,12 @@
                     <a href="Budgeting.html">Budgeting</a>
                 </li>
                 <li>
-                    <a href="#">Account</a>
+                    <a href="index.html">Account</a>
                 </li>
             </ul>
         </section>
     </footer>
     <script src="script.js"></script>
 </body>
+
 </html>
