@@ -61,6 +61,7 @@ main {
   gap: 1.5rem;
   padding: 1.5rem;
   height: 782px;
+  box-shadow: 0px 4px 8px rgb(44, 44, 44);
 }
 .card{
   display:flex;
@@ -68,6 +69,7 @@ main {
   background-color: rgb(253, 253, 253);
   border-radius: 24px;
   padding: 1.5rem;
+  box-shadow: 0px 4px 8px rgb(129, 129, 129);
 }
 
 h1 {
@@ -75,6 +77,33 @@ h1 {
   font-weight: 800; 
   color: #18355F;
 }
+/* Summer Gap Savings */
+
+.Outerbar {
+  height: 20px;
+  background-color: lightgray;
+  border-radius: 24px;
+  width: 100%;
+}
+
+#innerbar {
+  width: 0%;
+  height: 100%;
+  background-color: green;
+  border-radius: 24px;
+}
+
+/* Recent Transaction */
+.Transaction {
+  display: flex;
+  flex-direction: row;
+
+}
+.Named {
+  display: flex;
+  flex-direction: column;
+}
+
   /* width: 100%; */
 footer {
   display:flex;

@@ -8,7 +8,6 @@ const randomAmount = () => {
     return result;
 }
 
-console.log(randomAmount());
 
 const display = document.getElementById('randomAmount');
 const m = randomAmount();
@@ -19,19 +18,107 @@ display.textContent = "$" + m;
 
 const Savingsbar = () => {
     const max = 15000;
+    const f = max.toLocaleString('en-US');
 
     const resultSavings = Math.random() * max;
-    resultSavings.toLocaleString('en-US');
+    const r = resultSavings.toLocaleString('en-US');
+    const StatusMessage = (`You have saved $${r} out of your $${f} goal!`)
+    const p = document.getElementById('savings');
+    p.textContent = StatusMessage
     const FinalSavings = (resultSavings / max ) * 100; 
-    
     const three = FinalSavings.toFixed(0)
     return three;
 }
 
-console.log(Savingsbar());
 
-const p = document.getElementById('savings');
 const bar = document.getElementById('innerbar');
+const f = Savingsbar ();
+bar.style.width = f + "%";
 
-p.textContent = (`${resultSavings.toLocaleString('en-US')} saved of $15,000.00 goal`)
+
+// ---------------Recent Transactions---------------- //
+// Price maker //
+const Pricemaker = () => {
+    const min = 10;
+    const max = 300;
+
+    const Step1 = Math.random() * (max - min ) + min;
+    const Step2 = Step1 * -1;
+    const Step3 = Step2.toLocaleString('en-US');
+
+    return Step3;
+    
+}
+
+// date maker //
+const Datemaker = () => {
+  const D = new Date (); 
+  const M = Math.random() * 7;
+
+  D.setDate(D.getDate () - M);
+  const FinalDate = D.toLocaleDateString();
+
+  return FinalDate;
+
+}
+
+// Id maker //
+const Idmaker = () => {
+    const M = Math.floor(Math.random() * 90000) + 10000;
+
+    return M;
+}
+
+const RecentTransactions = () => {
+    const w = ["Walmart", "Costco", "Target", "ALDI", "Starbucks", "Chipotle", "Dunkin", "Amazon", "SmartCuts", "shell"];
+
+    
+
+    
+    const E = document.getElementById('Transaction');
+    E.innerHTML = "";
+
+    for (let i = 0; i < 4; i++) {
+       const num = Math.floor(Math.random() * w.length) 
+       const rnum = w[num]
+
+       const FinalPrice = Pricemaker();
+       const FinalDate = Datemaker(); 
+       const FinalId = Idmaker();
+
+       const row = document.createElement("div");
+       row.classList.add("Transaction");
+
+       const group1 = document.createElement("div");
+       group1.classList.add("Named")
+
+       const name = document.createElement("span");
+       name.textContent = rnum + "#" + FinalId;
+       name.classList.add("Shopname");
+
+       const date = document.createElement("p");
+       date.textContent = FinalDate;
+       name.classList.add("date");
+
+       const price = document.createElement("span");
+       price.textContent = FinalPrice;
+       price.classList.add("price");
+
+       
+       group1.appendChild(name);
+       group1.appendChild(date);
+       
+       row.appendChild(name);
+       row.appendChild(date);
+       row.appendChild(price);
+
+       
+       E.appendChild(group1);
+       E.appendChild(row);
+       
+    } 
+}
+
+RecentTransactions();
+
 
