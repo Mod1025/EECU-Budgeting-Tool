@@ -23,13 +23,12 @@ nav{
   display:flex;
   justify-content:space-around;
   align-items:center;
-  width:30vw;
+  width:35%;
   justify-self:center;
 }
 #Profile{
   color:white;
   display:flex;
-  width:9vw;
   justify-content:space-around;
   font-size:24px;
 }
@@ -52,8 +51,8 @@ main {
 }
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
-  grid-template-rows: 30% 65%; /* Top row smaller than bottom row */
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 30% 65%; 
   background-color:#CCDEF6;
   width:1190px;
   align-self:center;
@@ -96,15 +95,36 @@ h1 {
 /* Recent Transaction */
 .Transaction {
   display: flex;
-  flex-direction: row;
-
+  justify-content: space-between; 
+  align-items: center;            
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
 }
-.Named {
+
+.Name {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;         
 }
 
-  /* width: 100%; */
+.store-name {
+  font-weight: bolder;
+  font-size: 24px;
+  color: #1a2b4c;
+}
+
+.date {
+  color: #888;
+  font-size: 20px;
+  margin: 0;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 24px;
+  color: red;
+}
+/*Footer*/
+/* width: 100%; */
 footer {
   display:flex;
   flex-direction:column;

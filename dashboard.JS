@@ -1,10 +1,10 @@
 //Amount//
 const randomAmount = () => {
     const min = 500;
-    const max = 100000;
+    const max = 2000;
 
     const FinalAmount = Math.random()*(max - min) + min;
-    const result = FinalAmount.toLocaleString('en-us');
+    const result = FinalAmount.toLocaleString('en-US');
     return result;
 }
 
@@ -40,11 +40,11 @@ bar.style.width = f + "%";
 // Price maker //
 const Pricemaker = () => {
     const min = 10;
-    const max = 300;
+    const max = 100;
 
     const Step1 = Math.random() * (max - min ) + min;
     const Step2 = Step1 * -1;
-    const Step3 = Step2.toLocaleString('en-US');
+    const Step3 = Step2.toFixed(2);
 
     return Step3;
     
@@ -90,16 +90,16 @@ const RecentTransactions = () => {
        row.classList.add("Transaction");
 
        const group1 = document.createElement("div");
-       group1.classList.add("Named")
+       group1.classList.add("Name")
 
        const name = document.createElement("span");
        name.textContent = rnum + "#" + FinalId;
-       name.classList.add("Shopname");
+       name.classList.add("store-name");
 
        const date = document.createElement("p");
        date.textContent = FinalDate;
-       name.classList.add("date");
-
+       date.classList.add("date");
+       
        const price = document.createElement("span");
        price.textContent = FinalPrice;
        price.classList.add("price");
@@ -108,12 +108,10 @@ const RecentTransactions = () => {
        group1.appendChild(name);
        group1.appendChild(date);
        
-       row.appendChild(name);
-       row.appendChild(date);
+       row.appendChild(group1);
        row.appendChild(price);
 
        
-       E.appendChild(group1);
        E.appendChild(row);
        
     } 
