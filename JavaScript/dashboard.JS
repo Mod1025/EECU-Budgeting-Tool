@@ -4,7 +4,7 @@ const randomAmount = () => {
     const max = 2000;
 
     const FinalAmount = Math.random()*(max - min) + min;
-    const result = FinalAmount.toLocaleString('en-US');
+    const result = FinalAmount.toLocaleString('en-US', {maximumFractionDigits:2});
     return result;
 }
 
@@ -18,10 +18,10 @@ display.textContent = "$" + m;
 
 const Savingsbar = () => {
     const max = 15000;
-    const f = max.toLocaleString('en-US');
+    const f = max.toLocaleString('en-US', {maximumFractionDigits:2});
 
     const resultSavings = Math.random() * max;
-    const r = resultSavings.toLocaleString('en-US');
+    const r = resultSavings.toLocaleString('en-US', {maximumFractionDigits:2});
     const StatusMessage = (`You have saved $${r} out of your $${f} goal!`)
     const p = document.getElementById('savings');
     p.textContent = StatusMessage
@@ -117,6 +117,30 @@ const RecentTransactions = () => {
     } 
 }
 
+const MonthlyNetIncome = () => {
+    const savedData = localStorage.getItem('myBudgetData');
+    if(!savedData) return;
+    const parsedData = JSON.parse(savedData);
+    const salary = Number(parsedData.selectedSalary);
+    const m = (salary) * 0.0145;
+    const ss = (salary) * 0.062;
+    const s = (salary) * 0.04;
+
+    let fed = 0;
+    if (salary < 12400) {
+    fed = salary * 0.10;
+   } else if (salary < 50400) {
+    fed = salary * 0.12;
+   } else {
+    fed = salary * 0.22;
+   }
+
+   const totalTaxes = m + ss + s + fed;
+   const annualNet = salary - totalTaxes;
+   const FinalNetIncome = (annualNet) / 12;
+   
+   document.getElementById('NetMonthly').textContent = "$" + FinalNetIncome.toLocaleString('en-US', {maximumFractionDigits: 2})
+}
+
+MonthlyNetIncome();
 RecentTransactions();
-
-

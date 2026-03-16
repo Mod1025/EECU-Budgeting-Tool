@@ -1,6 +1,6 @@
 let Career = { Occupation: "", Salary: 0 };
 const dropDown = document.getElementById("careerDrop");
-const taxCard = document.getElementsByClassName("card"); 
+const taxCard = document.getElementsByClassName("card");
 
 
 
@@ -31,29 +31,32 @@ function createOptions(careers) {
     });
 }
 
+
 function saveCareer() {
-    localStorage.setItem("career", JSON.stringify(Career));
+    localStorage.setItem("myBudgetData", JSON.stringify({ selectedSalary: Career.Salary }));
 }
 
 function loadCareer() {
     const savedCareer = localStorage.getItem("career");
     if (savedCareer) {
-        Career = JSON.parse(savedCareer);
+        myBudgetData = JSON.parse(savedCareer);
         console.log(`Future Career: ${Career.Occupation}`);
     }
 }
 
 function initalize() {
-    loadCareer(); // Load the saved career from localStorage
-    getCareers(); // Fetch careers and populate the dropdown
+    loadCareer(); 
+    getCareers(); 
     dropDown.addEventListener("change", () => {
-        let occupation = dropDown.dataset.occupation;
-        let salary = Number(dropDown.dataset.salary);
-        dropDown.dataset.salary = salary; // Update the salary in the data attribute
-        dropDown.dataset.occupation = occupation; // Update the occupation in the data attribute
-        console.log(`Selected Career: ${occupation}, Salary: $${salary}`); 
-    }); //for when the user selects a dropdown option, it will update the Career object with the selected occupation and salary, and log the selected career and salary to the console.
+        const selectedOption = dropDown.options[dropDown.selectedIndex];
+        let occupation = selectedOption.dataset.occupation;
+        let salary = Number(selectedOption.dataset.salary);
+        Career.Occupation = occupation;
+        Career.Salary= salary; 
+        saveCareer();
+    });
 }
+
 
 
 

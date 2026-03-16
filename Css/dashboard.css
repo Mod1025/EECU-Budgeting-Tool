@@ -3,9 +3,6 @@ body{
   padding: 0;
   font-family: Roboto;
 }
-*{
-  box-sizing: border-box;
-}
 
 header {
   display: flex;
@@ -15,8 +12,8 @@ header {
   align-items:center;
 }
 a{
-   text-decoration:none;
-   color:white;
+  text-decoration:none;
+  color:white;
   font-size:24px;
 }
 nav{
@@ -60,7 +57,7 @@ main {
   gap: 1.5rem;
   padding: 1.5rem;
   height: 782px;
-  box-shadow: 0px 4px 8px rgb(44, 44, 44);
+  box-shadow: 0px 4px 8px rgb(175, 175, 175);
 }
 .card{
   display:flex;
@@ -68,7 +65,7 @@ main {
   background-color: rgb(253, 253, 253);
   border-radius: 24px;
   padding: 1.5rem;
-  box-shadow: 0px 4px 8px rgb(129, 129, 129);
+  box-shadow: 0px 4px 8px rgb(182, 182, 182);
 }
 
 h1 {
@@ -91,7 +88,39 @@ h1 {
   background-color: green;
   border-radius: 24px;
 }
-
+/*In-hand salary*/
+.group-boxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+  border: 0.3vh solid #D0D0D0;
+  margin-bottom: 5vh;
+  padding: 2vh;
+  height: 15vh;
+  border-radius: 1.6vh;
+  box-shadow: 0 4px 4px lightgray;
+}
+.label {
+  margin: 0;
+  padding: 0;
+  margin-top: 1vh;
+  font-size: 27px;
+  font-weight: bolder;
+  color: #75787D;
+}
+.group-boxes p:last-child {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  font-weight: bolder;
+  margin-top: 1vh;
+  color: #75787D;
+}
+.group-boxes:last-child {
+height: 15vh;
+margin-top: 1vh;
+}
 /* Recent Transaction */
 .Transaction {
   display: flex;
@@ -126,22 +155,38 @@ h1 {
 /*Footer*/
 /* width: 100%; */
 footer {
+  margin: 0;
+  padding: 0;
   display:flex;
-  flex-direction:column;
-  align-items:center;
+  flex-direction:row;
+  justify-content: space-between;
   gap:10px;
   background-color:#0054A4;
-  margin-top: 13%;
-  
+  margin-top: 10%;
+  padding-right: 5vh;
+}
+.links > ul > li {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  list-style: none;
+  padding-top: 5vh;
+  margin-bottom: 2vh;
+}
+.links > ul > li > a {
+  font-family: sans-serif !important; 
+  font-size: 2vh;
+  font-weight: bolder;
 }
 
-figure {
- border: none;
-}
+footer > div > img {
+  display: flex;
+  justify-content: center;
+  border: none;
+  padding-top: 5vh;
+  margin-right: 15vh;
+}  
 
-li {
-  text-decoration: none;
-}
 
 #header-main {
   display: flex;
@@ -150,4 +195,32 @@ li {
   color:#0054A4;
   align-items:center;
   padding-left: 100px;
+}
+
+
+
+
+
+/* ---------------Media For phones -------------------------*/
+
+@media screen and (max-width: 600px) {
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    header > figure > img {
+      width: 10vh;
+      padding-right: 0.5vh;
+    }
+    nav {
+      gap: 10px;
+      
+    }
+    nav > a {
+      font-size: 15px;
+    }
+    #Profile {
+      font-size: 5px;
+    }
+    
 }

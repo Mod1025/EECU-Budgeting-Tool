@@ -16,6 +16,7 @@ a {
   text-decoration:none;
   color:white;
   font-size:24px;
+  transition: 0.5s;
 }
 nav {
   display:flex;
@@ -23,6 +24,9 @@ nav {
   align-items:center;
   width:35%;
   justify-self:center;
+}
+nav > a:hover {
+transform: scale(1.1);
 }
 #Profile {
   color:white;
@@ -62,15 +66,16 @@ main {
   align-self:center;
   border-radius: 2rem;
   gap: 1.5rem;
-  padding: 1.5rem;
-  height: 782px;
+  padding: 1.6rem;
+  height: 80vh;
 }
-.card {
+.card, .card3,.card4 {
   display:flex;
   flex-direction:column;
   background-color: rgb(253, 253, 253);
   border-radius: 24px;
   padding-left: 1.5rem;
+  padding-bottom: 1.6rem;
   box-shadow: 0px 2px 10px #b1b1b1;
 }
 
@@ -144,8 +149,135 @@ margin-top: 2vh;
   font-size: 34px;
   font-weight: bolder;
 }
+/* Montly expense list */
+.firstrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.firstrow h2 {
+  margin: 0;
+}
+.firstrow span {
+  cursor: pointer;
+  user-select: none;
+  margin: 2vh;
+  font-size: 6vh;
+  transition: 0.2s;
+  color: #7B8493;
+}
+.firstrow span:hover {
+  transform: scale(1.1);
+  color: #3e434b;
+}
+#MonthlyIncome {
+  margin: 0;
+  padding: 0;
+  font-size: 2.5vh;
+  font-weight: bolder;
+  color: #75787D;
+  margin-bottom: 2vh;
+}
+#Expenses-Table {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#Expenses-Table li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  margin-right: 2vh;
+  margin-bottom: 2vh;
+}
+#Expenses-Table li > label {
+  font-size: 2.4vh;
+  color: #18355F;
+  font-weight: bolder;
+}
+#Expenses-Table li > input {
+  border-radius: 1vh;
+  border: 0.3vh solid lightgray;
+  padding: 0.3vh;
+}
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
 
+.card3 {
+  overflow: visible;
+  overflow-y: auto;
+}
+.right-row {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+.Deletebtn {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: red;
+  transition: 0.2s;
+  padding-left: 0.7vh;
+ 
+}
+.Deletebtn:hover {
+  transform: scale(1.5);
+}
+.expense-input {
+  border-radius: 1vh;
+  border: 0.3vh solid lightgray;
+  padding: 0.3vh;
+  font-size: 15px;
+}
+/*Monthly Budget Breakdown*/
 
+.card4 {
+  display: flex;
+  align-items: center;
+}
+.H2card4 {
+  margin: 0;
+  margin-top: 2vh;
+  margin-right: 3vh;
+  text-align: center;
+}
+.chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  height: 75%;
+  width: 75% ;
+}
+
+.Remainingmoney {
+  margin: -6vh;
+  text-align: center;
+  padding-right: 3vh;
+  font-size: 40px;
+  font-weight: bolder;
+}
+#Remaining-money {
+ margin-top: 7vh;
+ text-align: center;
+ margin-right: 7vh;
+ font-size: 40px;
+ font-weight: bold;
+ color: green; 
+}
+/* Tip*/
 #wise {
   display: flex;
   justify-content: center;
@@ -162,20 +294,36 @@ margin-top: 2vh;
 /*Footer*/
 /* width: 100%; */
 footer {
+  margin: 0;
+  padding: 0;
   display:flex;
-  flex-direction:column;
-  align-items:center;
+  flex-direction:row;
+  justify-content: space-between;
   gap:10px;
   background-color:#0054A4;
-  margin-top: 13%;    
-}  
-  
-figure {
-  border: none;
+  margin-top: 10%;
+  padding-right: 5vh;
 }
-  
-li {
-  text-decoration: none;
+.links > ul > li {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  list-style: none;
+  padding-top: 5vh;
+  margin-bottom: 2vh;
+}
+.links > ul > li > a {
+  font-family: sans-serif !important; 
+  font-size: 2vh;
+  font-weight: bolder;
+}
+
+footer > div > img {
+  display: flex;
+  justify-content: center;
+  border: none;
+  padding-top: 5vh;
+  margin-right: 15vh;
 }  
   
 #header-main {

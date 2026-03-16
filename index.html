@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./Css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"rel="stylesheet">
 </head>
 <body>
     <main>
@@ -12,18 +13,20 @@
     <h2>Tell us more about yourself to calculate your future.</h2>
 <form>
 <section id="firstInput">
-    <input  class="placeholder" id="firstName" placeholder="First Name" required>
+    <label for="Graduation">First Name</label>
+    <input  class="placeholder" placeholder="First Name" type="text" required>
+    <label for="Graduation">Choose your career</label>
     <select  class="placeholder" name="career-drop" required id="careerDrop">
         <option value="" disabled selected>Your career here</option>
     </select>
-    <input 
-    class="placeholder" placeholder="Target Graduation Year" type="date" required>
+    <label for="Graduation">Target Graduation Year</label>
+    <input class="placeholder" placeholder="Target Graduation Year" type="date" required>
 </section>
     
     <button id="CalculateButton"><a href="dashboard.html"> Calculate My Future</a></button>
 </form>
 </main>
     
-<script src="script.js" defer></script>
+<script src="./JavaScript/Index.js" defer></script>
 </body>
 </html>
