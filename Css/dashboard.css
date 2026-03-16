@@ -164,6 +164,7 @@ footer {
   background-color:#0054A4;
   margin-top: 10%;
   padding-right: 5vh;
+  font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;;
 }
 .links > ul > li {
   display: flex;
@@ -174,7 +175,6 @@ footer {
   margin-bottom: 2vh;
 }
 .links > ul > li > a {
-  font-family: sans-serif !important; 
   font-size: 2vh;
   font-weight: bolder;
 }
@@ -208,19 +208,74 @@ footer > div > img {
       margin: 0;
       padding: 0;
     }
+    /*NAV*/
+    header {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-content: center;
+    }
     header > figure > img {
-      width: 10vh;
-      padding-right: 0.5vh;
+      width: 9vh;
+      padding-right: 1vh;
+      position: relative;
+      right: 3.5vh;
     }
     nav {
-      gap: 10px;
+      gap: 20px;
+      display: flex;
+      padding-right: 5vh;
       
     }
     nav > a {
-      font-size: 15px;
+      position: relative;
+      right: 5.5vh;
+      font-size: 18px;
+      margin-right: 2vh;
     }
     #Profile {
-      font-size: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    margin-right: -10vh;
     }
-    
+    #Profile img {
+      width: 4vh;
+      margin-right: 1vh;
+    }
+    /* Main */
+    #header-main {
+      position: relative;
+      right: 3vh;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+    }
+    .cards {
+      display: flex;
+      flex-direction: column;
+      min-height: fit-content;
+    }
+
+    /* Footer */
+    footer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .links > ul > li > a {
+      text-align: center;
+      margin-bottom: 1vh;
+    }
+    footer > div {
+      display: flex;
+      justify-content: center;
+    }
+    footer > div > img {
+      margin: 0;
+      padding: 0;
+    }
 }

@@ -3,8 +3,6 @@ body {
   padding: 0;
   font-family: Roboto;
 }
-
-
 header {
   display: flex;
   flex-direction: row;
@@ -334,4 +332,113 @@ footer > div > img {
   align-items:center;
   padding-left: 100px;
   
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  /*NAV*/
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+  }
+  header > figure > img {
+    width: 9vh;
+    padding-right: 1vh;
+    position: relative;
+    right: 3.5vh;
+  }
+  nav {
+    gap: 20px;
+    display: flex;
+    padding-right: 5vh;
+    
+  }
+  nav > a {
+    position: relative;
+    right: 5.5vh;
+    font-size: 18px;
+    margin-right: 2vh;
+  }
+  #Profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  margin-right: -10vh;
+  }
+  #Profile img {
+    width: 4vh;
+    margin-right: 1vh;
+  }
+  /* Main */
+  #header-main {
+    position: relative;
+    right: 3vh;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+  .cards {
+    display: flex;
+    flex-direction: column;
+    min-height: fit-content;
+  }
+  #careerDrop {
+    position: relative;
+    right: 7.5vh;
+  }
+  .salarytext {
+    position: relative;
+    right: 5vh;
+    padding: 0;
+    text-align: center;
+  }
+  #Salary {
+    position: relative;
+    right: 10vh;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  .H2boxe2 {
+    position: relative;
+    right: 2vh;
+    margin-bottom: 2vh;
+  }
+  #Remaining-money {
+    position: relative;
+    left: 2vh;
+  }
+  #wise {
+    position: relative;
+    right: 2.3vh;
+    padding: 5vh;
+    text-align: center;
+    width: 25vh;
+  }
+  /* Footer */
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .links > ul > li > a {
+    text-align: center;
+    margin-bottom: 1vh;
+  }
+  footer > div {
+    display: flex;
+    justify-content: center;
+  }
+  footer > div > img {
+    margin: 0;
+    padding: 0;
+  }
 }
