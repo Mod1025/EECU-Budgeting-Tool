@@ -88,13 +88,20 @@ const scanner = (update) => {
     }
 
    const FinalUpdate = update - TotalExpense;
+ 
+   const formattedValue = "$" + Math.abs(FinalUpdate).toLocaleString('en-Us', {maximumFractionDigits:2});
 
-   const FinalDisplay = FinalUpdate < 0 ? 0 : FinalUpdate 
-   MonthlyIncome.textContent = "Monthly Net Income: $" + FinalDisplay.toLocaleString('en-US', {maximumFractionDigits:2});
-   card4moneyr.textContent = "$" + FinalDisplay.toLocaleString('en-US', {maximumFractionDigits:2});
+   if (FinalUpdate < 0) {
+    card4moneyr.style.color = "red";
+    card4moneyr.textContent = "-" + formattedValue;
+   } else {
+    card4moneyr.style.color = "green";
+    card4moneyr.textContent = formattedValue;
+    MonthlyIncome.textContent = "Monthly Net Income: " + formattedValue;
+   }
 
    labels.push("Rmainig Balance")
-   data.push(FinalDisplay > 0 ? FinalDisplay : 0);
+   data.push(FinalUpdate > 0 ? FinalUpdate : 0);
 
    updateChart(labels, data);
 } 
